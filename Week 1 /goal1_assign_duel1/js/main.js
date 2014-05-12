@@ -46,9 +46,24 @@ Assignment: Goal1: Duel - The Wicked Witch vs. The Evil Queen (from Once Upon a 
  			
  			var results = winnerCheck();
  			console.log(results);
- 		};
  		
- 	};
+ 		
+ 			if(results === "no winner"){	// Continues to the next round
+ 				
+ 				round++;
+ 				alert(playerOneName+":"+playerOneHealth+" *ROUND " + round + " OVER* "+playerTwoName+":"+playerTwoHealth);	// Displays player names, health, and round
+ 		
+ 				}else{
+ 				
+ 					alert(results);	// Displays the winner
+ 					break	// ends the fight loop
+ 					
+ 					};
+ 		
+ 				};
+ 		
+ 			};
+ 		
  	
  	function winnerCheck() {
  	
