@@ -8,5 +8,19 @@ Assignment: Goal1: Duel - The Wicked Witch vs. The Evil Queen (from Once Upon a 
 (function(){
  
  	console.log("FIGHT!!");
+ 	
+ 	//player names
+ 	var playerOneName = "Evil Queen";
+ 	var playerTwoName = "Wicked Witch";
+ 	
+ 	//player damage
+ 	var player1Damage = 20;
+ 	var player2Damage = 20;
+ 	
+ 	//player health
+ 	var playerOneHealth = 100;
+ 	var playerTwoHealth = 100;
  
 })();
+
+
