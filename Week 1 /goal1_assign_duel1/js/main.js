@@ -31,6 +31,8 @@ Assignment: Goal1: Duel - The Wicked Witch vs. The Evil Queen (from Once Upon a 
  		
  		for (var i = 0; i < 10; i++) {
  			
+ 			var minDamage1 = player1Damage *.5;
+ 			var minDamage2 = player2Damage *.5;
  		};
  		
  	};
