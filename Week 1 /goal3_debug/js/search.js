@@ -1,3 +1,6 @@
+//PWA Homework Debug - Week 1
+//Laura Moser
+
 // Create privatized scope using a self-executing function
 (function(){
 
