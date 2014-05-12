@@ -29,10 +29,16 @@ Assignment: Goal1: Duel - The Wicked Witch vs. The Evil Queen (from Once Upon a 
  		
  		alert(playerOneName+":"+playerOneHealth+" *START* "+playerTwoName+":"+playerTwoHealth);
  		
+ 		//a loop is created to create 'fight' rounds where random damage is taken until a winner is decleared. 
  		for (var i = 0; i < 10; i++) {
  			
+ 			/*Math Formula for Random Damage*/
  			var minDamage1 = player1Damage *.5;
  			var minDamage2 = player2Damage *.5;
+ 			var f1 = Math.floor(Math.random()*(player1Damage - minDamage1)+minDamage1);
+ 			var f2 = Math.floor(Math.random()*(player2Damage - minDamage2)+minDamage2);
+ 			
+ 			
  		};
  		
  	};
