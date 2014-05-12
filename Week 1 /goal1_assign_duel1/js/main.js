@@ -38,21 +38,21 @@ Assignment: Goal1: Duel - The Wicked Witch vs. The Evil Queen (from Once Upon a 
  			var f1 = Math.floor(Math.random()*(player1Damage - minDamage1)+minDamage1);
  			var f2 = Math.floor(Math.random()*(player2Damage - minDamage2)+minDamage2);
  			
- 			//console.log(f1);
- 			//console.log(f2);
- 			
  			/*inflict damage*/
  			playerOneHealth-=f1;
  			playerTwoHealth-=f2;
  			
- 			//console.log(playerOneName+":"+playerOneHealth+" "+playerTwoName+":"+playerTwoHealth);
+ 			console.log(playerOneName+":"+playerOneHealth+" "+playerTwoName+":"+playerTwoHealth);
  			
- 			winnerCheck();
+ 			var results = winnerCheck();
+ 			console.log(results);
  		};
  		
  	};
  	
  	function winnerCheck() {
+ 	
+ 		console.log("in winnerCheck FN");
  		var result="no winner";
  		
  		if(playerOneHealth<1&&playerTwoHealth<1){
