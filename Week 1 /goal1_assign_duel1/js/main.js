@@ -20,6 +20,15 @@ Assignment: Goal1: Duel - The Wicked Witch vs. The Evil Queen (from Once Upon a 
  	//player health
  	var playerOneHealth = 100;
  	var playerTwoHealth = 100;
+ 	
+ 	//fighting rounds
+ 	var round = 1;
+ 
+ 	function fight() {};
+ 	
+ 	function winnerCheck() {};
+ 	
+ 	fight();
  
 })();
 
