@@ -12,8 +12,8 @@
 
 //Game variables - These are Global.
 var playersGuess = 0;
-var guessesRemaining = 3;
-var guessesMade = 0;
+var guessRemain = 3;
+var guessMade = 0;
 
 //DOM Elements Setup in my index.html page
 var dom = {
@@ -34,19 +34,22 @@ var validateInput = function() {
 	if(isNaN(playersGuess)){
 		dom.output.innerHTML = "Please enter a number between 1 and 10";
 		
-	}else if (playerGuess < 1 || playersGuess > 10) {
-		dom.out.innerHTML = "Please make sure your guess is between numbers 1 and 10";
+	}else if (playersGuess < 1 || playersGuess > 10) {
+		dom.output.innerHTML = "Please make sure your guess is between numbers 1 and 10";
 	
 	}else {
 		guessNumber();
 	};
-
-	
+		
 };
 
+//allows the button to work
+var clickFn = function (e) {
+	validateInput();
+};
 
 //Guessing Game
-var guessNumber = function() {
+var guessNumber = function(){
 	guessRemain--;
 	guessMade++;
 	gameState = "Guess: " + guessMade + " Remaining " + guessRemain;
@@ -62,7 +65,7 @@ var guessNumber = function() {
 
 	}else if (playersGuess === randomNumber) {
 		gameOver(true);
-	}
+	};
 };
 
 console.log("Players Guess: " + playersGuess);
@@ -76,10 +79,9 @@ var gameOver = function(win) {
 		+ "You got it in " + guessMade + " guesses.";
 	}else{
 		dom.output.innerHTML
-		= "Sorry, there are no more guesses left. The number was " + randomNumber;
+		= "Game Over. Sorry, there are no more guesses left. The number was " + randomNumber;
 		};
-		
-		dom.button.removeEventListener("click",clickFn, false);
+	dom.button.removeEventListener("click", clickFn, false)
 };
 
 //Allows user to use the 'Enter' key instead of click on the button.
@@ -90,13 +92,7 @@ var onKeyDown = function(e) {
 
 };
 
-//allows the button to work
-var clickFn = function (e) {
-	validateInput();
-	console.log(guessRemain);
-};
-
-dom.button.addEventListener("Click", clickFn, false);
+dom.button.addEventListener("click", clickFn, false);
 
 window.addEventListener("keydown", onKeyDown, false)
 
