@@ -90,6 +90,16 @@ var onKeyDown = function(e) {
 
 };
 
+//allows the button to work
+var clickFn = function (e) {
+	validateInput();
+	console.log(guessRemain);
+};
+
+dom.button.addEventListener("Click", clickFn, false);
+
+window.addEventListener("keydown", onKeyDown, false)
+
 
 
 })();
