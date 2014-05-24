@@ -13,6 +13,15 @@ Assignment: Homework Week 3 - The Duel Part 3.
  	var playerOne = ["Evil Queen",20,100];
  	var playerTwo = ["Wicked Witch",20,100];
  	
+ 	//my dom
+ 	var fighter1_txt = document.querySelector("#evilQueen").querySelector("p"); // Query Selector used so '#' is needed.
+ 	var fighter2_txt = document.querySelector("#wickedWitch").querySelector("p");
+ 	var round_txt = document.getElementById("round_number"); 
+ 	var buttton = document.getElementById("fight_btn"); //added ID to button in HTML
+ 	
+ 	//button - click event
+ 	button.addEventListener("click", fight, false);
+ 	
  	//player damage
  	//var player1Damage = 20;
  	//var player2Damage = 20;
@@ -27,7 +36,6 @@ Assignment: Homework Week 3 - The Duel Part 3.
  	function fight() {
  		console.log("in the fight function");
  		
- 		alert(playerOne[0]+":"+playerOne[2]+" *START* "+playerTwo[0]+":"+playerTwo[2]);
  		
  		//a loop is created to create 'fight' rounds where random damage is taken until a winner is decleared. 
  		for (var i = 0; i < 10; i++) {
