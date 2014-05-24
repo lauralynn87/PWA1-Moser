@@ -9,10 +9,6 @@ Assignment: Homework Week 3 - The Duel Part 3.
  
  	console.log("FIGHT!!");
  	
- 	//player names
- 	var playerOne = ["Evil Queen",20,100];
- 	var playerTwo = ["Wicked Witch",20,100];
- 	
  	//my dom
  	var fighter1_txt = document.querySelector("#evilQueen").querySelector("p"); // Query Selector used so '#' is needed.
  	var fighter2_txt = document.querySelector("#wickedWitch").querySelector("p");
@@ -22,16 +18,28 @@ Assignment: Homework Week 3 - The Duel Part 3.
  	//button - click event
  	button.addEventListener("click", fight, false);
  	
- 	//player damage
- 	//var player1Damage = 20;
- 	//var player2Damage = 20;
+ 	//Array of Objects for Fighters.
+ 	var fighters = [
  	
- 	//player health
- 	//var playerOneHealth = 100;
- 	//var playerTwoHealth = 100;
+ 		{
+ 			name: "Evil Queen",
+ 			damage: 20,
+ 			health: 100
+ 			
+ 		},
+ 		{
+ 			name: "Wicked Witch"
+ 			damage: 20,
+ 			health: 100
+ 			
+ 		}];
+ 		
  	
- 	//fighting rounds
- 	var round = 1;
+ 	//Starts the dom
+ 	round_txt.innerHTML = "Click Below to Start Dueling!";
+ 	fighter1_txt.innerHTML = fighters[0].name + ":" + fighters[0].health;
+ 	fighter2_txt.innerHTML = fighters[1].name + ":" + fighters[1].health;
+ 	
  
  	function fight() {
  		console.log("in the fight function");
