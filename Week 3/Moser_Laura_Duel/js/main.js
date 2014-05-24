@@ -19,20 +19,18 @@ Assignment: Homework Week 3 - The Duel Part 3.
  	button.addEventListener("click", fight, false);
  	
  	//Array of Objects for Fighters.
- 	var fighters = [
+ 	var  fighters = [
  	
- 		{
- 			name: "Evil Queen",
- 			damage: 20,
- 			health: 100
- 			
- 		},
- 		{
- 			name: "Wicked Witch"
- 			damage: 20,
- 			health: 100
- 			
- 		}];
+ 	         {
+ 	            name: "Evil Queen",
+ 	            damage:20,
+ 	            health:100
+ 	         },
+ 	         {
+ 	             name: "Wicked Witch",
+ 	             damage:20,
+ 	             health:100
+ 	         }];
  		
  	
  	//Starts the dom
@@ -42,69 +40,73 @@ Assignment: Homework Week 3 - The Duel Part 3.
  	
  
  	function fight() {
+ 		
  		console.log("in the fight function");
  		
- 		
- 		//a loop is created to create 'fight' rounds where random damage is taken until a winner is decleared. 
- 		for (var i = 0; i < 10; i++) {
- 			
- 			/*Math Formula for Random Damage*/
- 			var minDamage1 = playerOne[1] *.5;
- 			var minDamage2 = playerTwo[1] *.5;
- 			var f1 = Math.floor(Math.random()*(playerOne[1] - minDamage1)+minDamage1);
- 			var f2 = Math.floor(Math.random()*(playerTwo[1] - minDamage2)+minDamage2);
- 			
- 			/*inflict damage*/
- 			playerOne[2]-=f1;
- 			playerTwo[2]-=f2;
- 			
- 			console.log(playerOneName+":"+playerOneHealth+" "+playerTwoName+":"+playerTwoHealth);
- 			
- 			var results = winnerCheck();
- 			console.log(results);
+ 		fighter1_txt.innerHTML = fighters[0].name + " : " + fighters[0].health;
+ 		fighter2_txt.innerHTML = fighters[1].name + " : " + fighters[1].health;
  		
  		
- 			if(results === "no winner"){	// Continues to the next round
- 				
- 				round++;
- 				alert(playerOne[0]+":"+playerOne[2]+" *ROUND " + round + " OVER* "+playerTwo[0]+":"+playerTwo[2]);	// Displays player names, health, and round
+ 		//Formula to determine damage
+ 		var formula1 = Math.floor(Math.random() * (fighters[0].damage + fighters[0].damage *.5));
+ 		var formula2 = Math.floor(Math.random() * (fighters[1].damage + fighters[1].damage *.5));
  		
- 				}else{
- 				
- 					alert(results);	// Displays the winner
- 					break	// ends the fight loop
- 					
- 					};
+ 		//Damage Inflicted
+ 		fighters[0].health -= formula1;
+ 		fighters[1].health -= formula2;
  		
- 				};
+ 		console.log(fighters[0].health, fighters[1].health);
  		
- 			};
+ 		// Checks for Winner
+ 		var results = winnerCheck();
+ 		
+ 		console.log(results);// Fight Results Print In The Console
+ 		
+ 		round_txt.innerHTML = "Round #" + round + " Results:";
+ 		round++;
+ 		if (results === "NO WINNER") //If no winner Displays results of Remaining Fights Health
+ 		    {
+ 		      fighter1_txt.innerHTML = fighters[0].name + " : " + fighters[0].health;
+ 		      fighter2_txt.innerHTML = fighters[1].name + " : " + fighters[1].health;
+ 		
+ 		     } else{
+ 		                fighter1_txt.innerHTML = results;
+ 		                fighter2_txt.innerHTML = "";
+ 		
+ 		                button.removeEventListener("click", fight, false);
+ 		
+ 		                document.querySelector('.buttonblue').innerHTML = 'Game Over!'; //Button changes from "FIGHT" to "DONE!!!"
+ 		            };
+ 		 		
+ 	};
  		
  	
  	function winnerCheck() {
  	
  		console.log("in winnerCheck FN");
- 		var result="no winner";
- 		
- 		if(playerOne[2]<1&&playerTwo[2]<1){
- 			result = "You Both Die"; // if both players get below 0
- 			
- 		} else if (playerOne[2]<1) {
- 			result = playerTwo[0]+" Wins!!!"; // When Player One health goes below 0, then player two wins!
- 			
- 		} else if (playerTwo[2]<1) {
- 			result = playerOne[0] + " Wins!!"; // When player 2 health goes below 0, player one wins!
- 		
- 		};
- 		
- 		return result; //returns the results
+ 	
+ 		var result = "NO WINNER";
+ 	        
+ 	        if (fighters[0].health < 1 && fighters[1].health < 1)
+ 	        {
+ 	            result = "YOU BOTH DIE!!! NO WINNER THIS GAME!!!"; // "YOU BOTH DIE!!! NO WINNER THIS GAME!!!" Prints In The Console
+ 	
+ 	        } else if(fighters[0].health < 1){
+ 	            result = "**GAME OVER** " + fighters[1].name + " WINS!!!" // "**GAME OVER** Batman Wins" Prints In The Console
+ 	        
+ 	        } else if (fighters[1].health < 1)
+ 	        
+ 	        {
+ 	            result = "**GAME OVER** " + fighters[0].name + " WINS!!!" // "**GAME OVER** Spiderman Wins" Prints In The Console
+ 	        }
+ 	        
+ 	        return result;
  		
  	};	
  	
  	
  	
  	/**Program Starts Here**/
- 	console.log("program starts here");
  	fight();
  
 })();
