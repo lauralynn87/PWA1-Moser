@@ -13,7 +13,7 @@ Assignment: Homework Week 3 - The Duel Part 3.
  	var fighter1_txt = document.querySelector("#evilQueen").querySelector("p"); // Query Selector used so '#' is needed.
  	var fighter2_txt = document.querySelector("#wickedWitch").querySelector("p");
  	var round_txt = document.getElementById("round_number"); 
- 	var buttton = document.getElementById("fight_btn"); //added ID to button in HTML
+ 	var button = document.getElementById("fight_btn"); //added ID to button in HTML
  	
  	//button - click event
  	button.addEventListener("click", fight, false);
@@ -31,17 +31,19 @@ Assignment: Homework Week 3 - The Duel Part 3.
  	             damage:20,
  	             health:100
  	         }];
- 		
+ 	
+ 	//Start Round	
+ 	var round = 1;
  	
  	//Starts the dom
- 	round_txt.innerHTML = "Click Below to Start Dueling!";
+ 	round_txt.innerHTML = "**Click Below to Start Dueling!**";
  	fighter1_txt.innerHTML = fighters[0].name + ":" + fighters[0].health;
  	fighter2_txt.innerHTML = fighters[1].name + ":" + fighters[1].health;
  	
  
  	function fight() {
  		
- 		console.log("in the fight function");
+ 		console.log("**In the fight function**");
  		
  		fighter1_txt.innerHTML = fighters[0].name + " : " + fighters[0].health;
  		fighter2_txt.innerHTML = fighters[1].name + " : " + fighters[1].health;
@@ -63,7 +65,7 @@ Assignment: Homework Week 3 - The Duel Part 3.
  		console.log(results);// Fight Results Print In The Console
  		
  		round_txt.innerHTML = "Round #" + round + " Results:";
- 		round++;
+ 		round_txt++;
  		if (results === "NO WINNER") //If no winner Displays results of Remaining Fights Health
  		    {
  		      fighter1_txt.innerHTML = fighters[0].name + " : " + fighters[0].health;
