@@ -35,17 +35,18 @@ Assignment: Homework Week 3 - The Duel Part 3.
  	//Start Round	
  	var round = 1;
  	
- 	//Starts the dom
+ 	//Starts the dom - Using DOM instead of alerts
  	round_txt.innerHTML = "**Click Below to Start Dueling!**";
  	fighter1_txt.innerHTML = fighters[0].name + ":" + fighters[0].health;
  	fighter2_txt.innerHTML = fighters[1].name + ":" + fighters[1].health;
  	
  
+ 	//Fight Function - The whole program put together.
  	function fight() {
  		
  		console.log("**In the fight function**");
  		
- 		fighter1_txt.innerHTML = fighters[0].name + " : " + fighters[0].health;
+ 		fighter1_txt.innerHTML = fighters[0].name + " : " + fighters[0].health; // Shows the Fighters Name and Players Health after each fight!
  		fighter2_txt.innerHTML = fighters[1].name + " : " + fighters[1].health;
  		
  		
@@ -64,9 +65,9 @@ Assignment: Homework Week 3 - The Duel Part 3.
  		
  		console.log(results);// Fight Results Print In The Console
  		
- 		round_txt.innerHTML = "Round #" + round + " Results:";
+ 		round_txt.innerHTML = "Round #" + round;
  		round_txt++;
- 		if (results === "NO WINNER") //If no winner Displays results of Remaining Fights Health
+ 		if (results === "NO WINNER") //If no winner Displays results of remaining health for each fighter.
  		    {
  		      fighter1_txt.innerHTML = fighters[0].name + " : " + fighters[0].health;
  		      fighter2_txt.innerHTML = fighters[1].name + " : " + fighters[1].health;
@@ -91,15 +92,14 @@ Assignment: Homework Week 3 - The Duel Part 3.
  	        
  	        if (fighters[0].health < 1 && fighters[1].health < 1)
  	        {
- 	            result = "YOU BOTH DIE!!! NO WINNER THIS GAME!!!"; // "YOU BOTH DIE!!! NO WINNER THIS GAME!!!" Prints In The Console
+ 	            result = "YOU BOTH DIE!!! NO WINNER THIS GAME!!!"; // "YOU BOTH DIE!!! NO WINNER THIS GAME!!!" 
  	
  	        } else if(fighters[0].health < 1){
- 	            result = "**GAME OVER** " + fighters[1].name + " WINS!!!" // "**GAME OVER** Batman Wins" Prints In The Console
- 	        
+ 	            result = "**GAME OVER** " + fighters[1].name + " WINS!!!" // "**GAME OVER** Wicked Witch Wins        
  	        } else if (fighters[1].health < 1)
  	        
  	        {
- 	            result = "**GAME OVER** " + fighters[0].name + " WINS!!!" // "**GAME OVER** Spiderman Wins" Prints In The Console
+ 	            result = "**GAME OVER** " + fighters[0].name + " WINS!!!" // "**GAME OVER** Evil Queen Wins
  	        }
  	        
  	        return result;
