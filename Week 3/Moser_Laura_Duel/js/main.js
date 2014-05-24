@@ -65,7 +65,7 @@ Assignment: Homework Week 3 - The Duel Part 3.
  		
  		console.log(results);// Fight Results Print In The Console
  		
- 		round_txt.innerHTML = "Round #" + round;
+ 		round_txt.innerHTML = "Round #" + round; //****Can't seem to get the Round # to go up each time I click. Nothing happens. Not sure what I am doing wrong.****
  		round_txt++;
  		if (results === "NO WINNER") //If no winner Displays results of remaining health for each fighter.
  		    {
@@ -78,7 +78,7 @@ Assignment: Homework Week 3 - The Duel Part 3.
  		
  		                button.removeEventListener("click", fight, false);
  		
- 		                document.querySelector('.buttonblue').innerHTML = 'Game Over!'; //Button changes from "FIGHT" to "DONE!!!"
+ 		                document.querySelector('.buttonblue').innerHTML = 'Game Over!'; //Button changes from "FIGHT" to "Game Over!"
  		            };
  		 		
  	};
