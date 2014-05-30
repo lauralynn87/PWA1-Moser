@@ -7,7 +7,7 @@
 
 
 
-(function() {
+(function(){
 
 // Global Variables 
 var maxPeople = 3;
