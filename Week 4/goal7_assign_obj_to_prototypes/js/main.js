@@ -17,13 +17,13 @@ var interval;
 
 
 //Loop - That will randomly choose 3 people
-for (var i=0; i < maxPeople ; i++) {
+for (var i=0; i < maxPeople ; i++){
 
 		//This will randomly choose 3 people
 		var personIndex = Math.floor(Math.random() * names.length);
 		
 		//Keyword NEW to set up person object
-		var person = new Person(name[index], i+1);
+		var person = new Person(name[personIndex], i+1);
 		
 		populateHTML(person.name,"r"+(i+1)+"c1");
 		populateHTML(person.job,"r"+(i+1)+"c2");
@@ -39,7 +39,7 @@ for (var i=0; i < maxPeople ; i++) {
 interval = setInterval(runUpdate, 1000 / 30);
 
 
-function populateHTML(date, field) {
+function populateHTML(date, field){
 	
 	var id = document.getElementById(field);
 	id.innerHTML = data;
@@ -47,12 +47,14 @@ function populateHTML(date, field) {
 }
 
 
-function runUpdate() {
+function runUpdate(){
 	people.forEach(function(element) {
 			//console.log(elements);
 			element.update();
 	
 	});
+	
+}
 
 
 })();

@@ -21,7 +21,7 @@
 		this.name = name;
 		
 		//set inital action for each person randomly 
-		this.action = Person.actions[Math.floor(Math.random()=Person.actions.length)];
+		this.action = Person.actions[Math.floor(Math.random()*Person.jobs.length)];
 		
 		//sets job per person
 		this.job = Person.jobs[Math.floor(Math.random()=Person.jobs.length)];
