@@ -24,7 +24,7 @@
 		this.action = Person.actions[Math.floor(Math.random()*Person.jobs.length)];
 		
 		//sets job per person
-		this.job = Person.jobs[Math.floor(Math.random()=Person.jobs.length)];
+		this.job = Person.jobs[Math.floor(Math.random()*Person.jobs.length)];
 		
 		//defines row JS knows row in HTML to update the text in
 		this.row = row

@@ -23,13 +23,13 @@ for (var i=0; i < maxPeople ; i++){
 		var personIndex = Math.floor(Math.random() * names.length);
 		
 		//Keyword NEW to set up person object
-		var person = new Person(name[personIndex], i+1);
+		var person = new Person(names[personIndex], i+1);
 		
-		populateHTML(person.name,"r"+(i+1)+"c1");
+		populateHTML(person.names,"r"+(i+1)+"c1");
 		populateHTML(person.job,"r"+(i+1)+"c2");
 		
 		people.push(person);
-		names.splice(index,1);
+		names.splice(personIndex,1);
 		
 }
 
@@ -39,7 +39,7 @@ for (var i=0; i < maxPeople ; i++){
 interval = setInterval(runUpdate, 1000 / 30);
 
 
-function populateHTML(date, field){
+function populateHTML(data, field){
 	
 	var id = document.getElementById(field);
 	id.innerHTML = data;
