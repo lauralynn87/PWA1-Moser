@@ -38,7 +38,7 @@
 
 
 	Person.prototype.update = function() {
-		if [Math.floor(Math.random() <.01) {
+		if [Math.floor(Math.random() <.01)) {
 			var i = Math.floor(Math.random() * Person.actions.length);
 			this.action = Person.action[i];
 			var id = document.getElementById("r" + this.row + "c3");
